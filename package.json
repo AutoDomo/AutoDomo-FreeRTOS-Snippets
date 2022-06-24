@@ -1,0 +1,38 @@
+{
+  "name": "autodomofreertos",
+  "description": "FreeRTOS Snippets for C/C++",
+  "version": "0.1.0",
+  "displayName": "AutoDomo FreeRTOS Snippets",
+  "publisher": "autodomo",
+  "icon": "images/autodomo.png",
+  "galleryBanner": {
+    "color": "#2163A0",
+    "theme": "dark"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AutoDomo-FreeRTOS-Snippets"
+  },
+  "engines": {
+    "vscode": "0.10.x"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "c",
+        "path": "./snippets/c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./snippets/cpp.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "vsce": "^1.75.0"
+  }
+}

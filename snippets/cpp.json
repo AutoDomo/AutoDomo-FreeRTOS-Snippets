@@ -1,0 +1,144 @@
+{
+
+
+
+  "FreeRTOS queue": {
+
+      "prefix": "xqc",
+
+      "body": [
+
+          "xQueue$1 = xQueueCreate( $2, sizeof($3) );",
+
+      ],
+
+      "description": "Create FreeRTOS queue"
+
+  },
+
+
+
+  "FreeRTOS Queue Send": {
+
+      "prefix": "xqs",
+
+      "body": [
+
+          "xQueueSend( xQueue$1, &$2, 10$3);",
+
+      ],
+
+      "description": "Create FreeRTOS Queue Send"
+
+  },
+
+
+
+  "FreeRTOS Queue Receive": {
+
+      "prefix": "xqr",
+
+      "body": [
+
+          "BaseType_t xStatus;",
+
+          "xStatus = xQueueReceive( xQueue$1, &$2, portMAX_DELAY );",
+
+          "if( xStatus == pdPASS ){",
+
+              "\t$3",
+
+          "}",
+
+      ],
+
+      "description": "Create FreeRTOS Queue Receive"
+
+  },
+
+
+
+  "FreeRTOS Task": {
+
+      "prefix": "xtc",
+
+      "body": [
+
+          "xTaskCreate( vTask$1, \"Task$1\", configMINIMAL_STACK_SIZE + 1024$2, NULL, 1$3, NULL);",
+
+      ],
+
+      "description": "Create FreeRTOS Task"
+
+  },
+
+
+
+  "FreeRTOS Task Pinned": {
+
+      "prefix": "xtcp",
+
+      "body": [
+
+          "xTaskCreatePinnedToCore( vTask$1, \"vTask$1\", configMINIMAL_STACK_SIZE + 1024$2, NULL, 4$3, NULL, CORE_$4 );",
+
+      ],
+
+      "description": "Create FreeRTOS Task pinned to Core"
+
+  },
+
+
+
+  "FreeRTOS Task Function": {
+
+      "prefix": "vtf",
+
+      "body": [
+
+          "void vTask$1(void *pvParameters)",
+
+          "{",
+
+              "\twhile(true){",
+
+                  "\t\tvTaskDelay( 10 / portTICK_PERIOD_MS );",
+
+              "\t}",
+
+          "}"
+
+      ],
+
+      "description": "Create FreeRTOS Task Function"
+
+  },
+
+
+
+
+
+  "FreeRTOS Delay": {
+
+      "prefix": "vtd",
+
+      "body": [
+
+          "vTaskDelay( $1 / portTICK_PERIOD_MS );",
+
+      ],
+
+      "description": "Create FreeRTOS Delay"
+
+  },
+
+
+
+
+
+
+
+}
+
+
+
